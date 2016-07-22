@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html ng-app='app'>
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="utf-8">
+    <title>Salesify</title>
+
+    <link rel="stylesheet" href="./styles/normalize.css">
+    <link rel="stylesheet" href="./styles/reset.css">
+    <link rel="stylesheet" href="./styles/style.css" charset="utf-8">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css" media="screen" title="no title" charset="utf-8">
+  </head>
+  <body ng-controller="mainCtrl">
+
+    <nav class="nav-container">
+      <i class="fa fa-bars" id="hamburger" aria-hidden="true"></i>
+      <div class="nav-link"><a ui-sref="search">Search</a></div>
+      <div class="nav-link"><a ui-sref="watchlist">Watch list</a></div>
+      <div class="nav-link"><a ui-sref="about">About</a></div>
+    </nav>
+
+    <div id="nav-mobile">
+    <ul>
+      <li><a ui-sref="search">Search</a></li>
+      <li><a ui-sref="watchlist">Watch list</a></li>
+      <li><a ui-sref="about">About</a></li>
+    </ul>
+    </div>
+
+  <main>
+    {{test}}
+    <ui-view></ui-view>
+  </main>
+
+<x ng-show='show'></x>
+
+
+
+
+
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.6/angular.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-router/0.3.1/angular-ui-router.js"></script>
+    <script src="JS/angular/app.js"></script>
+    <script src="JS/angular/mainCtrl.js"></script>
+    <script src="JS/angular/services.js"></script>
+    <script src="JS/angular/searchcardDir.js"></script>
+    <script src="https://code.jquery.com/jquery-3.1.0.js"   integrity="sha256-slogkvB1K3VOkzAI8QITxV3VzpOnkeNVsKvtkYLMjfk="   crossorigin="anonymous"></script>
+    <script src="JS/animations.js"></script>
+
+  </body>
+</html>
