@@ -1,7 +1,7 @@
 angular.module('app')
-    .controller('mainCtrl', function($scope, $stateParams, $http, services) {
+    .controller('mainCtrl', function($scope, $stateParams, $http, $localStorage, services) {
 
-$scope.show = false;
+      $scope.show = false;
         $scope.getCompanyInfo = function(ticker) {
             services.getCompanyInfo(ticker).then(function(response) {
                 console.log(response);
@@ -23,13 +23,36 @@ $scope.show = false;
             });
         };
 
+        // var company = {
+        //   name: $scope.name,
+        //   ceo: $scope.ceo
+        // }
+
+        $scope.getCompanyNews = function(ticker) {
+            services.getCompanyNews(ticker).then(function(response) {
+                console.log(response);
+            });
+        };
+
+        $scope.addCompany = function(ticker) {
+          services.addCompany(ticker);
+        };
+
+        function getWatchedCompanies() {
+          services.getWatchedCompanies().then(function(response) {
+            $scope.companies = response;
+            console.log($scope.companies)
+          })
+        }
+        getWatchedCompanies();
+
         $scope.getCompanyPriceInfo = function(ticker) {
             services.getCompanyPriceInfo(ticker).then(function(response) {
                 console.log(response);
             });
         };
 
-
+//
 
 
 

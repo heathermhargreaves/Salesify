@@ -1,3 +1,5 @@
+@import url(https://fonts.googleapis.com/css?family=Open+Sans:400,700,300);
+
 .nav-container {
   height: 10vh;
   width: 100vw;
@@ -15,6 +17,10 @@
   font-weight: 300;
   font-family: 'Open Sans', sans-serif;
   text-transform: uppercase;
+}
+a:hover {
+  color: black;
+
 }
 
 
@@ -40,9 +46,68 @@ a {
   cursor: pointer;
 }
 
+h1,h2,h3,h4,h5,h6,p,li,button,input {
+  font-family: 'Open Sans';
+  text-align: center;
+}
 
+button {
+  background: #003459;
+  color: #FFFFFF;
+  border-color: #003459;
+  padding: 8px 50px 8px 50px;
+  border-radius: 3px;
+  font-weight: 300;
+}
+button:hover {
+  background: #FFFFFF;
+  border-color: #003459;
+  color: #003459;
+  font-weight: 700;
+}
 
+.search-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+  margin-left: 15vw;
+  margin-right: 15vw;
+  margin-top: 7vh;
+  background: #edecea;
+  box-shadow: 0 15px 15px rgba(0,0,0,0.12), 0 15px 15px rgba(0,0,0,0.24);
+  transition: all 0.2s ease-in-out;
+  padding: 20px;
+}
 
+.ticker-form {
+  display: flex;
+  align-items: center;
+  margin-left: 35vw;
+}
+
+hr {
+  border: 1px solid black;
+  width: 30vw;
+}
+
+input {
+    font-size:18px;
+    background-color: #FFFFFF;
+    padding:10px 10px 10px 5px;
+    /*display:block;*/
+    width:30vw;
+    border:none;
+    border-bottom:3px solid #c4c4c4;
+}
+input::-webkit-input-placeholder { /* Chrome/Opera/Safari */
+  color: #c4c4c4;
+  font-style: italic;
+  font-weight: 300;
+}
+input:focus {
+    outline:none;
+}
 
 /* media queries */
 

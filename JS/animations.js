@@ -3,6 +3,13 @@ $(document).ready(function() {
   $('#hamburger').click(function() {
     $('.nav-mobile').slideToggle('fast');
   });
-
+  $('a').click(function() {
+      $("a.visited").removeClass("visited");
+      $(this).addClass('visited');
+});
 
 }); //end document ready function
+
+
+//emojis
+// emojify.replace(':sparkling_heart:');
