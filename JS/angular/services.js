@@ -8,7 +8,7 @@ angular.module('app')
 
 //write function here to make sure the ticker symbol is in all caps
 
-
+//retrieve company info by ticker symbol
     this.getCompanyInfo = function(ticker) {
         var deferred = $q.defer();
         return $http({
@@ -22,7 +22,7 @@ angular.module('app')
     }
 
 
-
+  //retrieve company stock price
     this.getCompanyPriceInfo = function(ticker) {
       var deferred = $q.defer();
       return $http({
@@ -35,6 +35,7 @@ angular.module('app')
       return deferred.promise;
     },
 
+    //retrieve company news by ticker symbol
       this.getCompanyNews = function(ticker) {
         var deferred = $q.defer()
         return $http({
@@ -47,17 +48,22 @@ angular.module('app')
         return deferred.promise;
       };
 
-
+    //saving 'watched' companies to local storage
       // this.company = services.companyArr = [];
       this.addCompany = function(ticker) {
         var watchedCompanies = JSON.parse(localStorage.getItem('companies'));
         if(!watchedCompanies) {
           watchedCompanies = [];
         }
-        watchedCompanies.push(ticker);
-        localStorage.setItem('companies', JSON.stringify(watchedCompanies));
+        // for(var i = 1; i < watchedCompanies.length; i++) {
+        //   if(!(watchedCompanies.includes(ticker)))
+          watchedCompanies.push(ticker);
+          localStorage.setItem('companies', JSON.stringify(watchedCompanies));
+        // };
+
       };
 
+      //retrieve 'watchedCompanies' from local storage
       this.getWatchedCompanies = function() {
         var deferred = $q.defer();
         deferred.resolve(JSON.parse(localStorage.getItem('companies')));

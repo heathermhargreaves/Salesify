@@ -1,8 +1,21 @@
-<ul>
-  <li ng-repeat="company in companies">
-    <a href="#">
-      <h2>{{ company_url }}</h2>
-      <p>{{ company }}</p>
-    </a>
-  </li>
-</ul>
+<main class="watchlist" ng-repeat="ticker in companies">
+
+<div class="company-info">
+    <h3>{{ticker}}</h3>
+    <a ng-click="getCompanyInfo(ticker)"><i class="flaticon-add"></i></a>
+    <a ng-click="getCompanyNews(ticker)"><i class="flaticon-news"></i></a>
+
+    <div class="company-details">
+      <span><h4>{{companyName}}</h4> <h6>{{business_address`}}</h6></span>
+      <p>{{long_description}}</p>
+    </div>
+    <div class="company-news">
+
+    </div>
+</div>
+
+
+
+<!-- <watchlistcard-dir></watchlistcard-dir> -->
+
+</main>

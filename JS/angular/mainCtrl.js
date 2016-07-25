@@ -22,6 +22,7 @@ angular.module('app')
                 $scope.show = true;
             });
         };
+      //  $scope.getCompanyInfo();
 
         // var company = {
         //   name: $scope.name,
@@ -31,6 +32,7 @@ angular.module('app')
         $scope.getCompanyNews = function(ticker) {
             services.getCompanyNews(ticker).then(function(response) {
                 console.log(response);
+                $scope.news_articles = response.data;
             });
         };
 
@@ -41,14 +43,25 @@ angular.module('app')
         function getWatchedCompanies() {
           services.getWatchedCompanies().then(function(response) {
             $scope.companies = response;
-            console.log($scope.companies)
+            $scope.companies = $scope.companies.filter(function(c) {
+              if(c === "") {
+                return false;
+              }
+              else if (c === null) {
+                return true;
+              }
+              return true;
+            });
+            $scope.companies.sort();
+            console.log($scope.companies);
           })
         }
         getWatchedCompanies();
 
         $scope.getCompanyPriceInfo = function(ticker) {
             services.getCompanyPriceInfo(ticker).then(function(response) {
-                console.log(response);
+                console.log(response.data);
+
             });
         };
 
