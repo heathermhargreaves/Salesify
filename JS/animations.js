@@ -9,6 +9,8 @@ $(document).ready(function() {
   //   $('#sparkling_heart').effect('bounce', { times: 3 }, 'slow');
   // });
 
+
+
   $(function(){
       $(".typing").typed({
       strings: [" quota crusher", " beautiful sales human", " rockstar"],
@@ -20,7 +22,3 @@ $(document).ready(function() {
     });
 
 }); //end document ready function
-
-
-//emojis
-// emojify.replace(':sparkling_heart:');

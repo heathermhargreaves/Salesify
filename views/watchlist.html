@@ -1,15 +1,13 @@
 <main class="watchlist" ng-repeat="ticker in companies">
 
-<div class="company-info">
-    <h3>{{ticker}}</h3>
-    <a ng-click="getCompanyInfo(ticker)"><i class="flaticon-add"></i></a>
-    <a ng-click="getCompanyNews(ticker)"><i class="flaticon-news"></i></a>
+  <div class="company-info w3-container w3-light-grey w3-border">
+      <h3>{{ticker}}</h3>
+      <a ng-click="getCompanyInfo(ticker); changeView('info')"><i class="flaticon-add"></i></a>
+      <a ng-click="getCompanyNews(ticker); changeView('news')" ><i class="flaticon-news"></i></a>
 
-    <watchlistcard-dir ng-show="show"></watchlistcard-dir>
-</div>
+      <watchlistinfo-dir ng-show="hidden"></watchlistinfo-dir>
+      <watchlistnews-dir ng-show="hide"></watchlistnews-dir>
+  </div>
 
-
-
-<!-- <watchlistcard-dir></watchlistcard-dir> -->
 
 </main>

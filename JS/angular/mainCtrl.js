@@ -1,6 +1,7 @@
 angular.module('app')
     .controller('mainCtrl', function($scope, $stateParams, $http, services) {
 
+      //retrieving company info
       $scope.show = false;
         $scope.getCompanyInfo = function(ticker) {
             services.getCompanyInfo(ticker).then(function(response) {
@@ -24,27 +25,26 @@ angular.module('app')
         };
 
 
-      //  $scope.getCompanyInfo();
 
-        // var company = {
-        //   name: $scope.name,
-        //   ceo: $scope.ceo
-        // }
-
+        //retrieving news about company
         $scope.getCompanyNews = function(ticker) {
             services.getCompanyNews(ticker).then(function(response) {
                 console.log(response);
                 $scope.news_articles = response.data;
+                $scope.show = true;
             });
         };
 
+        //adding ticker to watched companies collection
         $scope.addCompany = function(ticker) {
           services.addCompany(ticker);
         };
 
+        //retrieving watched companies collection
         function getWatchedCompanies() {
           services.getWatchedCompanies().then(function(response) {
             $scope.companies = response;
+            //filtering to ensure that if a company is already in the watched companies collection, it will not get added again
             $scope.companies = $scope.companies.filter(function(c) {
               if(c === "") {
                 return false;
@@ -56,10 +56,11 @@ angular.module('app')
             });
             $scope.companies.sort();
             console.log($scope.companies);
-          })
+          });
         }
         getWatchedCompanies();
 
+      //get company stock info
         $scope.getCompanyPriceInfo = function(ticker) {
             services.getCompanyPriceInfo(ticker).then(function(response) {
                 console.log(response.data);
@@ -67,7 +68,21 @@ angular.module('app')
             });
         };
 
-//
+      // changing views on watchlist news and watchlist info directives so the other one gets open, the open one closes
+        $scope.changeView = function(view) {
+          if(view === 'info') {
+            $scope.hidden = !$scope.hidden;
+            $scope.hide = false;
+          }
+          else if (view === 'news') {
+            $scope.hide = !$scope.hide;
+            $scope.hidden = false;
+          }
+        };
+
+
+
+
 
 
 
