@@ -1,8 +1,8 @@
 angular.module('app')
   .directive('watchlistDir', function() {
     return {
-      templateUrl: "JS/angular/watchlistcard.html",
       restrict: 'E',
+      templateUrl: "JS/angular/watchlistcard.html",
       controller: 'mainCtrl'
     };
 

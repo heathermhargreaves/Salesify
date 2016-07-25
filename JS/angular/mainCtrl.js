@@ -1,5 +1,5 @@
 angular.module('app')
-    .controller('mainCtrl', function($scope, $stateParams, $http, $localStorage, services) {
+    .controller('mainCtrl', function($scope, $stateParams, $http, services) {
 
       $scope.show = false;
         $scope.getCompanyInfo = function(ticker) {
@@ -22,6 +22,8 @@ angular.module('app')
                 $scope.show = true;
             });
         };
+
+
       //  $scope.getCompanyInfo();
 
         // var company = {

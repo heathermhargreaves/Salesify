@@ -7,7 +7,7 @@
   justify-content: flex-end;
   align-items: center;
   position: fixed;
-  /*background-color: #fff;*/
+  background-color: #fff;
 }
 
 .nav-link {
@@ -108,6 +108,97 @@ input::-webkit-input-placeholder { /* Chrome/Opera/Safari */
 input:focus {
     outline:none;
 }
+
+
+
+/*About page styling*/
+.typed-cursor{
+    opacity: 1;
+    -webkit-animation: blink 0.7s infinite;
+    -moz-animation: blink 0.7s infinite;
+    animation: blink 0.7s infinite;
+}
+@keyframes blink{
+    0% { opacity:1; }
+    50% { opacity:0; }
+    100% { opacity:1; }
+}
+@-webkit-keyframes blink{
+    0% { opacity:1; }
+    50% { opacity:0; }
+    100% { opacity:1; }
+}
+@-moz-keyframes blink{
+    0% { opacity:1; }
+    50% { opacity:0; }
+    100% { opacity:1; }
+}
+
+header {
+  background: #00A7E1;
+  color: white;
+  font-family: 'Open Sans';
+  font-size: 2.25em;
+  display: flex;
+  align-items: center;
+  opacity: 1.2;
+  padding: 20% 0% 20% 8%;
+  height: 80vh;
+}
+
+.why-us {
+  padding: 15%;
+  font-size: 32px;
+  color: #00161E;
+}
+
+.why-us-details {
+  width: 100vw;
+  height: 70vh;
+  background:
+    /* top, transparent red, faked with gradient */
+    linear-gradient(
+      rgba(255, 0, 0, 0.45),
+      rgba(255, 0, 0, 0.45)
+    ),
+    /* bottom, image */
+    url(https://static.pexels.com/photos/7075/people-office-group-team.jpg);
+    background-size: contain;
+    background-size: cover;
+  color: white;
+  padding: 7%;
+  font-size: 1.66em;
+}
+
+.go-ahead {
+  padding: 10% 22% 10% 22%;
+  font-size: 1.25em;
+  color: #00161E;
+}
+.search-keyword {
+  color: #252AFF;
+}
+
+/*end about styling*/
+
+/*footer styling*/
+footer {
+  display: block;
+  background: #00161E;
+  height: 10vh;
+  width: 100%;
+  color: white;
+  padding: 25px;
+}
+
+footer p {
+  float: right;
+}
+/*footer a:hover {
+  color: #00A7E1 !important;
+}*/
+/*end footer styling*/
+
 
 /* media queries */
 

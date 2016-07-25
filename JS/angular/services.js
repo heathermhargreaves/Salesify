@@ -1,5 +1,5 @@
 angular.module('app')
-  .service('services', function($http, $q, $localStorage) {
+  .service('services', function($http, $q) {
 
     var headers = {
       Authorization: 'Basic NWU3MGQ5NzhkMzk0OTk5MGE0MDkyYTk1NzAwZWEyZWE6NTZiNWMxZGUyNzk5NzkxMTk1NzU5YjI0YzQ5OTUyNmM='

@@ -3,10 +3,21 @@ $(document).ready(function() {
   $('#hamburger').click(function() {
     $('.nav-mobile').slideToggle('fast');
   });
-  $('a').click(function() {
-      $("a.visited").removeClass("visited");
-      $(this).addClass('visited');
-});
+
+  //why no work?
+  // $('.why-us').mouseover(function() {
+  //   $('#sparkling_heart').effect('bounce', { times: 3 }, 'slow');
+  // });
+
+  $(function(){
+      $(".typing").typed({
+      strings: [" quota crusher", " beautiful sales human", " rockstar"],
+      typeSpeed: 10,
+      backDelay: 1000,
+      cursorChar: "|",
+      loop: true
+      });
+    });
 
 }); //end document ready function
 

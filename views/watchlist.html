@@ -5,13 +5,7 @@
     <a ng-click="getCompanyInfo(ticker)"><i class="flaticon-add"></i></a>
     <a ng-click="getCompanyNews(ticker)"><i class="flaticon-news"></i></a>
 
-    <div class="company-details">
-      <span><h4>{{companyName}}</h4> <h6>{{business_address`}}</h6></span>
-      <p>{{long_description}}</p>
-    </div>
-    <div class="company-news">
-
-    </div>
+    <watchlistcard-dir ng-show="show"></watchlistcard-dir>
 </div>
 
 
