@@ -55,17 +55,17 @@ h1,h2,h3,h4,h5,h6,p,li,button,input {
 }
 
 button {
-  background: #003459;
+  background: #00A7E1;
   color: #FFFFFF;
-  border-color: #003459;
+  border-color: #00A7E1;
   padding: 8px 50px 8px 50px;
   border-radius: 3px;
   font-weight: 300;
 }
 button:hover {
   background: #FFFFFF;
-  border-color: #003459;
-  color: #003459;
+  border-color: #00A7E1;
+  color: #00A7E1;
 
 }
 
@@ -106,14 +106,20 @@ input {
     /*display:block;*/
     width:30vw;
     border:none;
-    border-bottom:3px solid #c4c4c4;
+    border-bottom:3px solid #FFFFFF;
     background: #00A7E1;
+    color: #FFFFFF
 }
 input::-webkit-input-placeholder { /* Chrome/Opera/Safari */
-  color: #c4c4c4;
+  color: #FFFFFF;
   font-style: italic;
   font-weight: 300;
 }
+
+input:focus::-webkit-input-placeholder {
+    opacity: 0;
+}
+
 input:focus {
     outline:none;
 }

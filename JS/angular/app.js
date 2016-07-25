@@ -4,7 +4,7 @@ angular.module('app')
   .config(function($stateProvider, $urlRouterProvider) {
     $stateProvider
         .state('search', {
-          url: '/',
+          url: '/search',
           templateUrl: "../views/search.html"
         })
         .state('watchlist', {
@@ -12,7 +12,7 @@ angular.module('app')
           templateUrl: '../views/watchlist.html'
         })
         .state('about', {
-          url: '/about',
+          url: '/',
           templateUrl: '../views/about.html'
         });
 

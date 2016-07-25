@@ -1,5 +1,5 @@
 angular.module('app')
-    .controller('mainCtrl', function($scope, $stateParams, $http, services) {
+    .controller('mainCtrl', function($scope, $stateParams, $state, $http, services) {
 
       //retrieving company info
       $scope.show = false;
@@ -86,7 +86,10 @@ angular.module('app')
           }
         };
 
-
+    //function to reload ui view on click
+    $scope.reloadRoute = function() {
+        location.reload();
+    };
 
 
 

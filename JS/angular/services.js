@@ -49,15 +49,14 @@ angular.module('app')
       };
 
     //saving 'watched' companies to local storage
-      // this.company = services.companyArr = [];
       this.watchedCompanies = JSON.parse(localStorage.getItem('companies'));
       if(!this.watchedCompanies) {
         this.watchedCompanies = [];
       }
 
       this.addCompany = function(ticker) {
-          watchedCompanies.push(ticker);
-          localStorage.setItem('companies', JSON.stringify(watchedCompanies));
+          this.watchedCompanies.push(ticker);
+          localStorage.setItem('companies', JSON.stringify(this.watchedCompanies));
       };
 
       //removing a company from watched companies collections
