@@ -1,5 +1,8 @@
 @import url(https://fonts.googleapis.com/css?family=Open+Sans:400,700,300);
 
+body {
+  width: 100vw;
+}
 
 /*navigation styling */
 .nav-container {
@@ -21,8 +24,7 @@
   text-transform: uppercase;
 }
 a:hover {
-  color: black;
-
+  color: #00A7E1;
 }
 
 #hamburger {
@@ -64,10 +66,14 @@ button:hover {
   background: #FFFFFF;
   border-color: #003459;
   color: #003459;
-  font-weight: 700;
+
 }
 
 /*search page styling*/
+.search {
+  background: #00A7E1;
+  min-height: 80vh;
+}
 .search-card {
   display: flex;
   flex-direction: column;
@@ -101,6 +107,7 @@ input {
     width:30vw;
     border:none;
     border-bottom:3px solid #c4c4c4;
+    background: #00A7E1;
 }
 input::-webkit-input-placeholder { /* Chrome/Opera/Safari */
   color: #c4c4c4;
@@ -118,22 +125,36 @@ input:focus {
 /*watch list styling*/
 .watchlist {
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   justify-content: space-around;
+  flex-wrap: wrap;
+  background: #00A7E1;
+  width: 100vw;
+  min-height: 100vh;
 }
 .company-info {
-  display: flex;
-  flex-direction: column;
-  /*align-items: center;*/
-  justify-content: space-around;
-  margin-left: 15vw;
-  margin-right: 15vw;
-  margin-top: 7vh;
+  flex-direction: row;
+  min-height: 10vh;
+  margin-left: 25vw;
+  margin-right: 25vw;
+  margin-top: 5vh;
+  margin-bottom: 5vh;
   background: #edecea;
   box-shadow: 0 15px 15px rgba(0,0,0,0.12), 0 15px 15px rgba(0,0,0,0.24);
   transition: all 0.2s ease-in-out;
   padding: 20px;
 }
+
+.company-news {
+  border: 2px solid #003459;
+  margin: 5px;
+}
+
+.icons {
+  padding-left: 27%;
+  padding-bottom: 5vh;
+}
+
 
 /*About page styling*/
 .typed-cursor{

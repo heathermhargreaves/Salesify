@@ -31,6 +31,7 @@ angular.module('app')
             services.getCompanyNews(ticker).then(function(response) {
                 console.log(response);
                 $scope.news_articles = response.data;
+
                 $scope.show = true;
             });
         };
@@ -38,6 +39,11 @@ angular.module('app')
         //adding ticker to watched companies collection
         $scope.addCompany = function(ticker) {
           services.addCompany(ticker);
+        };
+
+        //removing ticker from watched companies collection
+        $scope.removeCompany = function(ticker) {
+          services.removeCompany(ticker);
         };
 
         //retrieving watched companies collection

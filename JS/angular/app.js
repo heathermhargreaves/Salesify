@@ -1,4 +1,4 @@
-angular.module('app', ['ui.router']);
+angular.module('app', ['ui.router', 'angularMoment']);
 
 angular.module('app')
   .config(function($stateProvider, $urlRouterProvider) {

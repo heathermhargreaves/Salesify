@@ -1,11 +1,9 @@
 <div class="search-card w3-container w3-light-grey w3-border">
-    <h1>{{companyName}}</h1>
+    <a href="{{company_url}}"><h1>{{companyName}}</h1></a>
     <hr>
-    <h3>{{short_description}}</h3>
-    <ul>
-      <li>{{company_url}}</li>
-      <li>{{industry_group}}</li>
-    </ul>
+    <h3>{{industry_group}}</h3>
+    <p>{{short_description}}</p>
+
 
     <div class="buttons">
       <button type="button" class="add-button" ng-click="addCompany(ticker)">Add to watchlist</button>

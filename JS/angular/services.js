@@ -30,7 +30,7 @@ angular.module('app')
         headers:headers,
         url: 'https://www.intrinio.com/api/companies?ticker=' + ticker
       }).then(function(response) {
-        return response.data[0];
+
       })
       return deferred.promise;
     },
@@ -50,18 +50,26 @@ angular.module('app')
 
     //saving 'watched' companies to local storage
       // this.company = services.companyArr = [];
+      this.watchedCompanies = JSON.parse(localStorage.getItem('companies'));
+      if(!this.watchedCompanies) {
+        this.watchedCompanies = [];
+      }
+
       this.addCompany = function(ticker) {
-        var watchedCompanies = JSON.parse(localStorage.getItem('companies'));
-        if(!watchedCompanies) {
-          watchedCompanies = [];
-        }
-        // for(var i = 1; i < watchedCompanies.length; i++) {
-        //   if(!(watchedCompanies.includes(ticker)))
           watchedCompanies.push(ticker);
           localStorage.setItem('companies', JSON.stringify(watchedCompanies));
-        // };
-
       };
+
+      //removing a company from watched companies collections
+      this.removeCompany = function(ticker) {
+        for (var i = 0; i < this.watchedCompanies.length; i++) {
+          if(ticker === this.watchedCompanies[i]) {
+            this.watchedCompanies.splice(i, 1);
+            }
+          }
+          localStorage.setItem('companies', JSON.stringify(this.watchedCompanies));
+        };
+
 
       //retrieve 'watchedCompanies' from local storage
       this.getWatchedCompanies = function() {

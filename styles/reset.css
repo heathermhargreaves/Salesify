@@ -113,3 +113,15 @@ h6 {
 p {
     margin-bottom: .5em;
 }
+
+ a {
+	 font-family: "Open Sans";
+	 font-weight: 300;
+	 margin-bottom: .5em;
+	 text-decoration: none;
+	 color: #00A7E1;
+ }
+
+ a:visited {
+	 color: #003459;
+ }
