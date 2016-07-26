@@ -55,8 +55,8 @@ angular.module('app')
         }
 
         this.addCompany = function(ticker) {
-            if(!this.watchedCompanies.includes(ticker)) {
-              this.watchedCompanies.push(ticker);
+            if(!this.watchedCompanies.includes(ticker.toUpperCase())) {
+              this.watchedCompanies.push(ticker.toUpperCase());
             }
             localStorage.setItem('companies', JSON.stringify(this.watchedCompanies));
         };
