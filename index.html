@@ -5,13 +5,19 @@
     <meta charset="utf-8">
     <title>Salesify</title>
 
+    <!-- custom style -->
     <link rel="stylesheet" href="styles/normalize.css">
     <link rel="stylesheet" href="styles/reset.css">
     <link rel="stylesheet" href="styles/style.css" charset="utf-8">
+
+    <!-- icons (trashcan, plus, and )-->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css" media="screen" title="no title" charset="utf-8">
     <link rel="stylesheet" href="font/flaticon.css" >
-    <link rel="stylesheet" href="vex-2.2.1/css/vex.css">
-    <link rel="stylesheet" href="vex-2.2.1/css/vex-theme-wireframe.css">
+
+    <!-- ngDialog styles -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/ng-dialog/0.4.0/css/ngDialog.min.css" charset="utf-8">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/ng-dialog/0.4.0/css/ngDialog-theme-plain.min.css" charset="utf-8">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/ng-dialog/0.6.2/css/ngDialog-theme-default.css" charset="utf-8">
 
 
   </head>
@@ -20,8 +26,8 @@
     <nav class="nav-container">
       <i class="fa fa-bars" id="hamburger" aria-hidden="true"></i>
       <div class="nav-link"><a ui-sref="search">Search</a></div>
-      <div class="nav-link"><a ng-click="reloadWatchlist()" ui-sref="watchlist">Watch list</a></div>
-      <div class="nav-link"><a ng-click="reloadRoute()" ui-sref="about">About</a></div>
+      <div class="nav-link"><a ui-sref="watchlist">Watch list</a></div>
+      <div class="nav-link"><a ui-sref-opts="{reload: true}" ui-sref="about">About</a></div>
     </nav>
 
     <div id="nav-mobile">
@@ -49,6 +55,7 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-moment/1.0.0-beta.6/angular-moment.min.js" charset="utf-8"></script>
     <script src="vex-2.2.1/js/vex.combined.min.js" charset="utf-8"></script>
     <script>vex.defaultOptions.className = 'vex-theme-wireframe';</script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/ng-dialog/0.6.2/js/ngDialog.js" charset="utf-8"></script>
     <script src="JS/typed.js-master/js/typed.js"></script>
 
 

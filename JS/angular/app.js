@@ -1,4 +1,4 @@
-angular.module('app', ['ui.router', 'angularMoment']);
+angular.module('app', ['ui.router', 'angularMoment', 'ngDialog']);
 
 angular.module('app')
   .config(function($stateProvider, $urlRouterProvider) {
@@ -12,11 +12,6 @@ angular.module('app')
           url: '/watchlist',
           templateUrl: '../views/watchlist.html',
           controller: 'mainCtrl'
-          // resolve: {
-          //   reload: function($window) {
-          //     $window.location.reload();
-          //   }
-          // }
         })
         .state('about', {
           url: '/',

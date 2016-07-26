@@ -4,7 +4,7 @@
       <h3>{{ticker}}</h3>
 
       <div class="icons">
-        <a ng-click="getCompanyInfo(ticker); changeView('info')"><i class="flaticon-add"></i></a>
+        <a ng-click="getCompanyInfo(ticker); getCompanyRevenue(ticker); changeView('info')"><i class="flaticon-add"></i></a>
         <a ng-click="getCompanyNews(ticker); changeView('news')" ><i class="flaticon-news"></i></a>
         <a ng-click="removeCompany(ticker)"><i class="flaticon-garbage"></i></a>
       </div>

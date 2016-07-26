@@ -114,6 +114,7 @@ input::-webkit-input-placeholder { /* Chrome/Opera/Safari */
   color: #FFFFFF;
   font-style: italic;
   font-weight: 300;
+  text-transform: uppercase;
 }
 
 input:focus::-webkit-input-placeholder {
@@ -156,12 +157,14 @@ input {
   border: 2px solid #003459;
   margin: 5px;
   padding: 5px;
+  background: white;
 }
 
 .company-news {
   border: 2px solid #003459;
   margin: 5px;
   padding: 5px;
+  background: white;
 }
 
 .icons {

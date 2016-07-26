@@ -1,21 +1,17 @@
 <div class="search-card w3-container w3-light-grey w3-border">
     <a target="_blank" href="{{company_url}}"><h1>{{companyName}}</h1></a>
     <hr>
-    <h3>{{industry_group}}</h3>
+    <h3>{{industry_group}} | Revenue {{revenue | currency: "$":0}}</h3>
+    <h4>{{hq_address_city}} &#8226; {{hq_state}}</h4>
     <p>{{short_description}}</p>
 
 
+
     <div class="buttons">
-      <button type="button" class="add-button"  ng-click="addCompany(ticker)">Add to watchlist</button>
-      <button type="button" class="watch-list button"  ui-sref="watchlist" ui-sref-opts="{reload: true}" >Check out my watchlist</button>
+      <button type="button" class="add-button"  ng-click="addCompany(ticker); clickToOpen()">Add to watchlist</button>
+      <button type="button" class="watch-list button"  ui-sref="watchlist">Check out my watchlist</button>
     </div>
 
-<!-- 
-    <div class="vex">
-        <div class="vex-overlay"></div>
-        <div class="vex-content">
-            <div class="vex-close"></div>
-        </div>
-    </div> -->
+
 
 </div>

@@ -1,5 +1,5 @@
 angular.module('app')
-    .controller('mainCtrl', function($scope, $window, $stateParams, $state, $http, services) {
+    .controller('mainCtrl', function($scope, ngDialog, $stateParams, $state, $http, services) {
 
       //retrieving company info
       $scope.show = false;
@@ -70,10 +70,10 @@ angular.module('app')
         getWatchedCompanies();
 
       //get company stock info
-        $scope.getCompanyPriceInfo = function(ticker) {
-            services.getCompanyPriceInfo(ticker).then(function(response) {
-                console.log(response.data);
-
+        $scope.getCompanyRevenue = function(ticker) {
+            services.getCompanyRevenue(ticker).then(function(response) {
+                console.log(response);
+                $scope.revenue = response.value;
             });
         };
 
@@ -89,17 +89,15 @@ angular.module('app')
           }
         };
 
-    //function to reload ui view on click
-    //   var check = true;
-    // $scope.reloadWatchlist = function() {
-    //
-    //   console.log('hey');
-    //   if ($state.current.name === 'watchlist' && check) {
-    //     check = false;
-    //     $window.location.reload();
-    //   }
-    //   };
-      // $scope.reloadWatchlist();
+        //dialog
+        $scope.clickToOpen = function () {
+            ngDialog.open({
+              template: 'JS/angular/modal-template.html',
+              className: 'ngdialog-theme-plain',
+              controller: 'mainCtrl',
+            });
+        };
+
 
 
 

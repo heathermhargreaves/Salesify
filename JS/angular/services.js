@@ -17,34 +17,33 @@ angular.module('app')
           url: 'https://www.intrinio.com/api/companies?ticker=' + ticker
         }).then(function(response) {
           return response.data;
-        })
+        });
         return deferred.promise;
-    }
+    };
 
 
-  //retrieve company stock price
-    // this.getCompanyPriceInfo = function(ticker) {
-    //   var deferred = $q.defer();
-    //   return $http({
-    //     method: 'GET',
-    //     headers:headers,
-    //     url: 'https://www.intrinio.com/api/companies?ticker=' + ticker
-    //   }).then(function(response) {
-    //
-    //   })
-    //   return deferred.promise;
-    // };
+  //retrieve company revenue
+    this.getCompanyRevenue = function(ticker) {
+      return $http({
+        method: 'GET',
+        headers: headers,
+        url: 'https://www.intrinio.com/api/data_point?ticker=' + ticker.toUpperCase() + '&item=totalrevenue'
+      }).then(function(response) {
+        return response.data;
+      });
+
+    };
 
     //retrieve company news by ticker symbol
       this.getCompanyNews = function(ticker) {
-        var deferred = $q.defer()
+        var deferred = $q.defer();
         return $http({
           method: 'GET',
           headers: headers,
           url: 'https://www.intrinio.com/api/news?ticker=' + ticker
         }).then(function(response) {
           return response.data;
-        })
+        });
         return deferred.promise;
       };
 
