@@ -38,7 +38,7 @@ a:hover {
 
 #nav-mobile ul li {
   height: 50px;
-  color: #000;
+  color: #003459;
   font-size: 15px;
   font-weight: 400;
   font-family: 'Open Sans', sans-serif;
@@ -131,34 +131,44 @@ input:focus {
 /*watch list styling*/
 .watchlist {
   display: flex;
-  flex-direction: column;
-  justify-content: space-around;
+  /*flex-direction: row;*/
   flex-wrap: wrap;
+  align-items: center;
+  /*justify-content: space-around;*/
   background: #00A7E1;
   width: 100vw;
-  min-height: 100vh;
+  min-height: 80vh;
 }
 .company-info {
   flex-direction: row;
   min-height: 10vh;
-  margin-left: 25vw;
-  margin-right: 25vw;
+  margin-left: 10vw;
+  margin-right: 3vw;
   margin-top: 5vh;
   margin-bottom: 5vh;
   background: #edecea;
   box-shadow: 0 15px 15px rgba(0,0,0,0.12), 0 15px 15px rgba(0,0,0,0.24);
   transition: all 0.2s ease-in-out;
-  padding: 20px;
+  padding: 10px;
+}
+
+.company-info p {
+  border: 2px solid #003459;
+  margin: 5px;
+  padding: 5px;
 }
 
 .company-news {
   border: 2px solid #003459;
   margin: 5px;
+  padding: 5px;
 }
 
 .icons {
-  padding-left: 27%;
+  display: flex;
+  justify-content: space-around;
   padding-bottom: 5vh;
+  padding-right: 20px;
 }
 
 
@@ -262,6 +272,16 @@ footer p {
       justify-content: flex-start;
       position: static;
     }
+
+    .watchlist {
+      display: flex;
+      flex-direction: row;
+      /*flex-wrap: wrap;*/
+      align-items: center;
+      justify-content: space-around;
+      background: #00A7E1;
+      width: 100vw;
+      min-height: 100vh;}
 }
 
 @media screen and (min-width: 768px) {

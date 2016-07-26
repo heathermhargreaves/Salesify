@@ -1,12 +1,12 @@
 <main class="watchlist">
 
-  <div class="company-info w3-container w3-light-grey w3-border" ng-repeat="ticker in companies">
+  <div class="company-info w3-container w3-light-grey w3-border" ng-repeat="ticker in companies track by $index">
       <h3>{{ticker}}</h3>
 
       <div class="icons">
         <a ng-click="getCompanyInfo(ticker); changeView('info')"><i class="flaticon-add"></i></a>
         <a ng-click="getCompanyNews(ticker); changeView('news')" ><i class="flaticon-news"></i></a>
-        <a ng-click="removeCompany(ticker); reloadRoute()"><i class="flaticon-garbage"></i></a>
+        <a ng-click="removeCompany(ticker)"><i class="flaticon-garbage"></i></a>
       </div>
 
       <watchlistinfo-dir ng-show="hidden"></watchlistinfo-dir>

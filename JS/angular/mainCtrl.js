@@ -1,10 +1,10 @@
 angular.module('app')
-    .controller('mainCtrl', function($scope, $stateParams, $state, $http, services) {
+    .controller('mainCtrl', function($scope, $window, $stateParams, $state, $http, services) {
 
       //retrieving company info
       $scope.show = false;
         $scope.getCompanyInfo = function(ticker) {
-            services.getCompanyInfo(ticker).then(function(response) {
+            services.getCompanyInfo(ticker.toUpperCase()).then(function(response) {
                 console.log(response);
                 $scope.companyName = response.name;
                 $scope.ceo = response.ceo;
@@ -25,7 +25,6 @@ angular.module('app')
         };
 
 
-
         //retrieving news about company
         $scope.getCompanyNews = function(ticker) {
             services.getCompanyNews(ticker).then(function(response) {
@@ -44,14 +43,18 @@ angular.module('app')
         //removing ticker from watched companies collection
         $scope.removeCompany = function(ticker) {
           services.removeCompany(ticker);
+          $state.go('watchlist');
         };
+
 
         //retrieving watched companies collection
         function getWatchedCompanies() {
           services.getWatchedCompanies().then(function(response) {
             $scope.companies = response;
             //filtering to ensure that if a company is already in the watched companies collection, it will not get added again
+            console.log($scope.companies);
             $scope.companies = $scope.companies.filter(function(c) {
+              c = c.toUpperCase();
               if(c === "") {
                 return false;
               }
@@ -87,11 +90,16 @@ angular.module('app')
         };
 
     //function to reload ui view on click
-    $scope.reloadRoute = function() {
-        location.reload();
-    };
-
-
+    //   var check = true;
+    // $scope.reloadWatchlist = function() {
+    //
+    //   console.log('hey');
+    //   if ($state.current.name === 'watchlist' && check) {
+    //     check = false;
+    //     $window.location.reload();
+    //   }
+    //   };
+      // $scope.reloadWatchlist();
 
 
 

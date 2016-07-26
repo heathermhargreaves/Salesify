@@ -23,17 +23,17 @@ angular.module('app')
 
 
   //retrieve company stock price
-    this.getCompanyPriceInfo = function(ticker) {
-      var deferred = $q.defer();
-      return $http({
-        method: 'GET',
-        headers:headers,
-        url: 'https://www.intrinio.com/api/companies?ticker=' + ticker
-      }).then(function(response) {
-
-      })
-      return deferred.promise;
-    },
+    // this.getCompanyPriceInfo = function(ticker) {
+    //   var deferred = $q.defer();
+    //   return $http({
+    //     method: 'GET',
+    //     headers:headers,
+    //     url: 'https://www.intrinio.com/api/companies?ticker=' + ticker
+    //   }).then(function(response) {
+    //
+    //   })
+    //   return deferred.promise;
+    // };
 
     //retrieve company news by ticker symbol
       this.getCompanyNews = function(ticker) {
@@ -48,33 +48,35 @@ angular.module('app')
         return deferred.promise;
       };
 
-    //saving 'watched' companies to local storage
-      this.watchedCompanies = JSON.parse(localStorage.getItem('companies'));
-      if(!this.watchedCompanies) {
-        this.watchedCompanies = [];
-      }
+      //saving 'watched' companies to local storage
+        this.watchedCompanies = JSON.parse(localStorage.getItem('companies'));
+        if(!this.watchedCompanies) {
+          this.watchedCompanies = [];
+        }
 
-      this.addCompany = function(ticker) {
-          this.watchedCompanies.push(ticker);
-          localStorage.setItem('companies', JSON.stringify(this.watchedCompanies));
-      };
-
-      //removing a company from watched companies collections
-      this.removeCompany = function(ticker) {
-        for (var i = 0; i < this.watchedCompanies.length; i++) {
-          if(ticker === this.watchedCompanies[i]) {
-            this.watchedCompanies.splice(i, 1);
+        this.addCompany = function(ticker) {
+            if(!this.watchedCompanies.includes(ticker)) {
+              this.watchedCompanies.push(ticker);
             }
-          }
-          localStorage.setItem('companies', JSON.stringify(this.watchedCompanies));
+            localStorage.setItem('companies', JSON.stringify(this.watchedCompanies));
         };
 
+        //removing a company from watched companies collections
+        this.removeCompany = function(ticker) {
+          for (var i = 0; i < this.watchedCompanies.length; i++) {
+            if(ticker === this.watchedCompanies[i]) {
+              this.watchedCompanies.splice(i, 1);
+              }
+            }
+            localStorage.setItem('companies', JSON.stringify(this.watchedCompanies));
+          };
 
-      //retrieve 'watchedCompanies' from local storage
-      this.getWatchedCompanies = function() {
-        var deferred = $q.defer();
-        deferred.resolve(JSON.parse(localStorage.getItem('companies')));
-        return deferred.promise;
-      };
+
+        //retrieve 'watchedCompanies' from local storage
+        this.getWatchedCompanies = function() {
+          var deferred = $q.defer();
+          deferred.resolve(JSON.parse(localStorage.getItem('companies')));
+          return deferred.promise;
+        };
 
   }); //end services

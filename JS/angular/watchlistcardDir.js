@@ -3,7 +3,7 @@ angular.module('app')
     return {
       restrict: 'E',
       templateUrl: "JS/angular/watchlistcard.html",
-      controller: 'mainCtrl'
+      // controller: 'mainCtrl'
     };
 
 

@@ -79,6 +79,7 @@ h3 {
     margin-right: 0;
     font-weight: bold;
 		text-align: justify;
+		color: #003459;
 }
 
 h4 {
@@ -119,7 +120,7 @@ p {
 	 font-weight: 300;
 	 margin-bottom: .5em;
 	 text-decoration: none;
-	 color: #00A7E1;
+	 color: #003459;
  }
 
  a:visited {

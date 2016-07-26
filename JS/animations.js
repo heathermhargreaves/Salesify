@@ -21,4 +21,19 @@ $(document).ready(function() {
       });
     });
 
+
+$(function() {
+  $('.add-button').on('click', function() {
+    vex.open({
+      content: '<div>Successfully added company</div>',
+      afterOpen: function($vexContent) {
+        return $vexContent.append($el);
+      },
+      afterClose: function() {
+        return console.log('vexClose');
+      }
+    });
+  });
+});
+
 }); //end document ready function
