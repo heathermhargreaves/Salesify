@@ -132,7 +132,7 @@ input {
 /*watch list styling*/
 .watchlist {
   display: flex;
-  /*flex-direction: row;*/
+  flex-direction: row;
   flex-wrap: wrap;
   align-items: center;
   /*justify-content: space-around;*/
@@ -142,9 +142,9 @@ input {
 }
 .company-info {
   flex-direction: row;
-  min-height: 10vh;
-  margin-left: 10vw;
-  margin-right: 3vw;
+  /*min-height: 10vh;*/
+  margin-left: 9%;
+  margin-right: 8%;
   margin-top: 5vh;
   margin-bottom: 5vh;
   background: #edecea;
@@ -165,6 +165,7 @@ input {
   margin: 5px;
   padding: 5px;
   background: white;
+  min-width: 76vw;
 }
 
 .icons {
@@ -265,6 +266,19 @@ footer p {
 
 
 /* media queries */
+@media screen and (max-width: 1274px) {
+  .company-info {
+    margin-left: 3vw;
+    margin-right: 3vw;
+  }
+}
+
+@media screen and (max-width: 1092px) {
+  .company-info {
+    margin-left: 2vw;
+    margin-right: 2vw;
+  }
+}
 
 @media screen and (max-width: 768px) {
     .nav-link {

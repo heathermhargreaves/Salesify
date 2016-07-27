@@ -92,12 +92,19 @@ angular.module('app')
         //dialog
         $scope.clickToOpen = function () {
             ngDialog.open({
-              template: 'JS/angular/modal-template.html',
-              className: 'ngdialog-theme-plain',
-              controller: 'mainCtrl',
+              template: 'JS/angular/modal-template-add-success.html',
+              className: 'ngdialog-theme-default',
+              controller: 'mainCtrl'
             });
         };
 
+        $scope.clickyWicky = function () {
+            ngDialog.open({
+              template: 'JS/angular/modal-template-delete-success.html',
+              className: 'ngdialog-theme-default',
+              controller: 'mainCtrl'
+            });
+        };
 
 
 
