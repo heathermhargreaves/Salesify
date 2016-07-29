@@ -3,7 +3,7 @@ angular.module('app')
 
     return {
       restrict: 'E',
-      templateUrl: 'js/angular/searchcard.html',
+      templateUrl: 'JS/angular/searchcard.html',
       controller: 'mainCtrl'
     };
 
