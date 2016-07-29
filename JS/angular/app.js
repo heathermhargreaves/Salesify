@@ -5,17 +5,17 @@ angular.module('app')
     $stateProvider
         .state('search', {
           url: '/search',
-          templateUrl: "../views/search.html",
+          templateUrl: "views/search.html",
           controller: 'mainCtrl'
         })
         .state('watchlist', {
           url: '/watchlist',
-          templateUrl: '../views/watchlist.html',
+          templateUrl: 'views/watchlist.html',
           controller: 'mainCtrl'
         })
         .state('about', {
           url: '/',
-          templateUrl: '../views/about.html',
+          templateUrl: 'views/about.html',
           controller: 'mainCtrl'
         });
 
