@@ -14,7 +14,7 @@ angular.module('app')
         return $http({
           method: 'GET',
           headers:headers,
-          url: 'https://www.intrinio.com/api/companies?ticker=' + ticker
+          url: 'https://api.intrinio.com/companies?ticker=' + ticker
         }).then(function(response) {
           return response.data;
         });
@@ -27,7 +27,7 @@ angular.module('app')
       return $http({
         method: 'GET',
         headers: headers,
-        url: 'https://www.intrinio.com/api/data_point?ticker=' + ticker.toUpperCase() + '&item=totalrevenue'
+        url: 'https://api.intrinio.com/data_point?ticker=' + ticker.toUpperCase() + '&item=totalrevenue'
       }).then(function(response) {
         return response.data;
       });
@@ -40,7 +40,7 @@ angular.module('app')
         return $http({
           method: 'GET',
           headers: headers,
-          url: 'https://www.intrinio.com/api/news?ticker=' + ticker
+          url: 'https://api.intrinio.com/news?ticker=' + ticker
         }).then(function(response) {
           return response.data;
         });
